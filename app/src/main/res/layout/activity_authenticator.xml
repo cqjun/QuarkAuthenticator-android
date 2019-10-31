@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AuthenticatorActivity">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#00574B">
+        <TextView
+            style="@style/common_txt_title"
+            android:textSize="20sp"
+            android:text="帐户"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_weight="4"
+            style="@style/common_txt_title" />
+
+        <ImageView
+            android:id="@+id/groupImg"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/group"/>
+
+        <TextView
+            android:id="@+id/menu_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            android:text="＋"
+            android:visibility="gone"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/content_accounts_present"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/enter_pin_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_pin"
+            android:maxLines="2"
+            android:ellipsize="middle"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/user_list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout_editor_absoluteX="0dp" />
+    <!--app:layout_constraintTop_toTopOf="@+id/textView"-->
+
+    <Button
+        style="@style/common_btn_wra"
+        android:layout_gravity="center"
+        android:text="@string/button_add_account"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/add_linearly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#2e7cfd"
+            android:text="让我们来添加你的第一个帐户" />
+
+        <TextView
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_circle_blue"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="+"/>
+
+    </LinearLayout>
+
+</LinearLayout>

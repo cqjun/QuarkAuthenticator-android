@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    //封装了摄像头的一个类，用来获取拍摄画面
+    <com.journeyapps.barcodescanner.BarcodeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/zxing_barcode_surface"/>
+
+    // 类似遮罩的作用覆盖在BarcodeView上
+    <com.journeyapps.barcodescanner.ViewfinderView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/zxing_viewfinder_view"/>
+
+    //提示语
+    <TextView android:id="@+id/zxing_status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:background="@color/zxing_transparent"
+        android:text="@string/zxing_msg_default_status"
+        android:textColor="@color/zxing_status_text"/>
+
+</FrameLayout>

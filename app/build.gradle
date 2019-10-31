@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "cn.quarkblockchain.czgoogleauth"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 103
+        versionName "1.0.3"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('quark3.keystore')
+            storePassword '123456'
+            keyAlias 'quark'
+            keyPassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                if (variant.buildType.name == 'release') {
+                    variant.outputs.all {
+                        def apkName = "${variant.versionName}"
+                        if (!variant.flavorName.isEmpty()) {
+                            apkName += "_${variant.flavorName}"
+                        }
+                        outputFileName = apkName + ".apk"
+                    }
+                }
+            }
+        }
+
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:+'
+    implementation 'com.android.support:recyclerview-v7:+'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    // 注解加入下面这两行代码
+//    api 'com.jakewharton:butterknife:8.8.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //
+
+    androidTestImplementation "org.mockito:mockito-core:1.9.5"
+    androidTestImplementation "com.google.dexmaker:dexmaker:1.2"
+    androidTestImplementation "com.google.dexmaker:dexmaker-mockito:1.2"
+
+    //zxing
+
+    //compile 'com.google.zxing:core:3.2.1'
+
+    //https://github.com/journeyapps/zxing-android-embedded
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+    implementation 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+}
