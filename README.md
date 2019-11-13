@@ -1,1 +1,0 @@
-# QuarkAuthenticator-android
