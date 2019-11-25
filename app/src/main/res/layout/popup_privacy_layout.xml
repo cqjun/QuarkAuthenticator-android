@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/shape_corner_search"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="个人隐私保护指引"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+        <View
+            android:background="#F0F0F0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <cn.quarkblockchain.czgoogleauth.AlxUrlTextView
+            android:autoLink="all"
+            android:padding="@dimen/dp_10"
+            android:id="@+id/tv_privacy_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <View
+            android:background="#F0F0F0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:id="@+id/tv_isee"
+            android:padding="15dp"
+            android:textColor="#ea4339"
+            android:text="我知道了"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
